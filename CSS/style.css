@@ -60,12 +60,16 @@ h1 span {
     position: absolute;
     bottom: 1%;
     left: 1%;
+    width: 20px;
+    height: 10px;
 }
 
 .Rcontainer {
     position: absolute;
     bottom: 1%;
     right: 1%;
+    width: 20px;
+    height: 10px;
 }
 
 .confetti {
