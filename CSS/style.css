@@ -19,10 +19,11 @@ body{
 }
 
 main {
-    position: relative;
+    position: absolute;
     display: flex;
     justify-content: center;
     text-align :center;
+    overflow: hidden;
 
 }
 
