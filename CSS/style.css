@@ -45,20 +45,20 @@ h1 span {
 }
 
 .Lcontainer {
-    position: absolute;
+    position: relative;
     bottom: 0%;
     left: 0%;
 }
 
 .Rcontainer {
-    position: absolute;
+    position: relative;
     bottom: 0%;
     right: 0%;
 }
 
 .confetti {
     overflow: hidden;
-    position: absolute;
+    position: relative;
     width: 20px;
     height: 10px;
     background: green;
@@ -67,7 +67,7 @@ h1 span {
 
 .Rconfetti {
     overflow: hidden;
-    position: absolute;
+    position: relative;
     width: 20px;
     height: 10px;
     background: green;
