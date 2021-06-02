@@ -16,15 +16,15 @@ body{
 
 main {
     position: relative;
-    overflow: hidden;
     min-Height: 100vh;
     display: flex;
     justify-content: center;
-    align-items:center;
+    text-align :center;
 
 }
 
 h1 {
+    display: inline-block;
     color: red;
     text-align: center;
     font-size: 10vw;
