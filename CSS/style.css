@@ -1,9 +1,13 @@
 * {
-    margin: 0;
-    padding: 0;
+
     box-sizing: border-box;
 }
 
+html{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
 body{
     width: 100%;
     height: 100%;
@@ -16,7 +20,6 @@ body{
 
 main {
     position: relative;
-    min-Height: 100vh;
     display: flex;
     justify-content: center;
     text-align :center;
@@ -45,13 +48,13 @@ h1 span {
 }
 
 .Lcontainer {
-    position: relative;
+    position: absolute;
     bottom: 0%;
     left: 0%;
 }
 
 .Rcontainer {
-    position: relative;
+    position: absolute;
     bottom: 0%;
     right: 0%;
 }
