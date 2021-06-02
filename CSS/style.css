@@ -1,7 +1,6 @@
 * {
     margin: 0;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 html{
@@ -73,7 +72,6 @@ h1 span {
 }
 
 .confetti {
-    overflow: hidden;
     position: relative;
     width: 20px;
     height: 10px;
@@ -82,7 +80,6 @@ h1 span {
 }
 
 .Rconfetti {
-    overflow: hidden;
     position: relative;
     width: 20px;
     height: 10px;
