@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    max-width:1200px;
+    max-height:1200px;
+    overflow: hidden;
+    background-image: linear-gradient(slategrey, black);
+}
+
+main {
+    position: relative;
+    overflow: hidden;
+    min-Height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+
+}
+
+h1 {
+    color: red;
+    text-align: center;
+    font-size: 10vw;
+    line-height: 1.5em;
+    z-index: 1000;
+    font-weight: 800;
+
+    /* Disables ability to highlight text */
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+h1 span {
+    color: rgb(145, 0, 145);
+    font-weight: 900;
+    z-index: 1000;
+}
+
+.Lcontainer {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+}
+
+.Rcontainer {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+}
+
+.confetti {
+    overflow: hidden;
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background: green;
+
+}
+
+.Rconfetti {
+    overflow: hidden;
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background: green;
+}

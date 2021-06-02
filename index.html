@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8", charset = "KS_C_5601">
+        <title>Happy Birthday Yujin</title>
+        <link href="CSS/style.css" rel="stylesheet">
+
+        <script src="JS/anime.min.js"></script>
+    </head>
+    <body>
+        <main>
+            <h1> 생일 축하해 
+                <br> <span>유진</span>
+            </h1>
+        </main>
+
+            <div class="Lcontainer">
+            </div>
+
+            <div class="Rcontainer">
+            </div>
+        <script src="JS/anime.min.js"></script>
+        <script>
+
+        const left = document.querySelector('.Lcontainer')
+        const right = document.querySelector('.Rcontainer')
+        const name = document.querySelector('span');
+
+        const ConfettiEffect = {
+            leftCreate: function(){
+                for (i = 0; i <=100; i++) {
+                const confetti = document.createElement('div')
+                confetti.classList.add('confetti');
+                left.appendChild(confetti)
+                }
+            },
+
+            
+            rightCreate: function() {
+                for (i = 0; i <=100; i++) {
+                const Rconfetti = document.createElement('div')
+                Rconfetti.classList.add('Rconfetti');
+                right.appendChild(Rconfetti)
+                }
+            },
+
+            // Gets a random RGB Color
+            randRGB: function(){
+                let rand1 = Math.floor(Math.random()* 255);
+                let rand2 = Math.floor(Math.random()* 255);
+                let rand3 = Math.floor(Math.random()* 255);
+                this.randRGB = 'rgb(' + rand1+ ',' + rand2 + ',' + rand3 + ')';
+                return this.randRGB
+            },
+
+            // Applies random color to confetti
+            colorChange: function() {
+                anime({
+                    targets:".confetti, .Rconfetti",
+                    background: this.randRGB,
+                    duration:0,
+                    skew: function(){
+                        return anime.random(-60, 60);
+                    },
+                    scale: function(){
+                        return anime.random(1, 1.2);
+                    },
+                    easing: 'linear'
+                });
+            },
+
+            leftThrow: function(){
+                anime({
+                    // Confetti Flying Up Animation
+                    targets: ".confetti",
+                    rotate: function() {
+                        return anime.random(0, 0.4);
+                    },
+                    
+                    rotate: function() {
+                        return anime.random(0, 70);
+                    },
+                    scale: function() {
+                        return anime.random(1, 1.1);
+                    },
+                    translateX: function(){
+                        return anime.random(0, 800);
+                    },
+                    translateY: function(){
+                        return anime.random(-150, -800);
+                    },
+                    duration: 2000,
+                    easing: 'easeOutQuad',
+                    complete: function (anim) {
+                        ConfettiEffect.leftFall();
+                    }
+
+                })
+            },
+
+            leftFall: function(){
+                anime({
+                    targets: ".confetti",
+                    skew: 140,
+                    rotate: function() {
+                        return anime.random(3, 30);
+                    },
+                    translateX: function(){
+                        return anime.random(-10, -500);
+                    },
+                    translateY: function(){
+                        return anime.random(100, 900);
+                    },
+                    skew: -170,
+                    skew: 50,
+                    
+                    opacity: 0,
+                    duration: 12000,
+                    easing: 'easeInSine',
+                    
+                })
+            },
+            
+            rightThrow: function(){
+                    anime({
+                    // Confetti Flying Up Animation
+                    targets: ".Rconfetti",
+                    rotate: function() {
+                        return anime.random(0, -0.4);
+                    },
+
+                    rotate: function() {
+                        return anime.random(0, -70);
+                    },
+                    scale: function() {
+                        return anime.random(1, 1.1);
+                    },
+                    translateX: function(){
+                        return anime.random(0, -800);
+                    },
+                    translateY: function(){
+                        return anime.random(-150, -800);
+                    },
+                    duration: 2000,
+                    easing: 'easeOutQuad',
+                    complete: function (anim) {
+                        ConfettiEffect.rightFall();
+                    }
+
+                })
+            },
+
+            rightFall: function(){
+                anime({
+                    targets: ".Rconfetti",
+                    skew: -140,
+                    rotate: function() {
+                        return anime.random(-3, -30);
+                    },
+                    translateX: function(){
+                        return anime.random(10, 500);
+                    },
+                    translateY: function(){
+                        return anime.random(100, 900);
+                    },
+                    skew: 170,
+                    skew: -50,
+                    
+                    opacity: 0,
+                    duration: 12000,
+                    easing: 'easeInSine',
+                    
+                });
+            },
+
+
+            clearConfetti: function() {
+                    document.querySelectorAll('.confetti', '.Rconfetti').forEach(function(i){
+                        i.parentNode.removeChild(i);
+                    });
+
+                      
+            },
+
+            fullConfetti: function(){
+                ConfettiEffect.leftCreate();
+                ConfettiEffect.rightCreate();
+                ConfettiEffect.colorChange();
+                ConfettiEffect.leftThrow();
+                ConfettiEffect.rightThrow();
+
+            },
+
+            relaunch: function() {
+                ConfettiEffect.clearConfetti();
+                ConfettiEffect.clearConfetti();
+                ConfettiEffect.fullConfetti();
+            }
+        }
+
+        
+        
+
+        name.onclick = function(){
+            ConfettiEffect.relaunch()
+        }
+
+        indicator = function(){
+            let shine = anime.timeline({
+                duration: 1500,
+                easing: 'easeInOutSine',
+                loop: true,
+            });
+
+            shine.add ({
+                targets: 'span',
+
+                color: 'rgb(255,0,255)',
+
+                
+            });
+            shine.add ({
+                targets: 'span',
+                color: 'rgb(145,0,145)',
+                
+            });
+
+        }
+
+        ConfettiEffect.fullConfetti();
+        indicator();
+            
+        </script>
+    </body>
+</html>
