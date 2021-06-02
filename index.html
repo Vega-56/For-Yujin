@@ -176,10 +176,13 @@
 
 
             clearConfetti: function() {
-                    document.querySelectorAll('.confetti', '.Rconfetti').forEach(function(i){
-                        i.parentNode.removeChild(i);
-                    });
-
+                    while (left.firstChild) {
+                        left.removeChild(left.lastChild);
+                    }
+                    while (right.firstChild) {
+                        right.removeChild(right.lastChild);
+                    }
+                },
                       
             },
 
