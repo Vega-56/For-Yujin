@@ -58,14 +58,14 @@ h1 span {
 
 .Lcontainer {
     position: absolute;
-    bottom: 0%;
-    left: 0%;
+    bottom: 1%;
+    left: 1%;
 }
 
 .Rcontainer {
     position: absolute;
-    bottom: 0%;
-    right: 0%;
+    bottom: 1%;
+    right: 1%;
 }
 
 .confetti {
