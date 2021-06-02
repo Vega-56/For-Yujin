@@ -9,6 +9,9 @@ body{
     height: 100%;
     overflow: hidden;
     background-image: linear-gradient(slategrey, black);
+    justify-content: center;
+    align-items: center;
+    align-text: center;
 }
 
 main {
